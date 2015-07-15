@@ -1,0 +1,46 @@
+<!doctype>
+<html>
+<head>
+	<link rel="stylesheet" href="css/style.css" />
+	<link href='http://fonts.googleapis.com/css?family=Muli:300,400' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" media="screen" type="text/css" href="js/colorpicker/css/colorpicker.css" />
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" ></script>
+	<script type="text/javascript" src="js/colorpicker/js/colorpicker.js"></script>
+</head>
+<body>
+	<div id="controls" class="transition_all_5s transition_delay_3s">
+		<div>
+			<span class="icon-image"></span>
+			<input type="text" id="image" data-prompt="Image URL" />
+		</div>
+		<div>
+			<span class="icon-loop"></span>
+			<input type="checkbox" id="repeat" name="repeat" /><label for="repeat">Repeat: <span class="on">On</span>/<span class="off">Off</span></label>
+		</div>
+		<div>
+			<span class="icon-stopwatch"></span>
+			<input type="text" id="time" data-prompt="Speed" />
+			<small>(in seconds)</small>
+		</div>
+		<div class="color-inc">
+			<span class="icon-color"></span>
+			<input type="text" class="color" data-prompt="Pick a color" />
+		</div>
+		<div class="color-inc clone-template">
+			<span class="icon-color"></span>
+			<input type="text" class="color" data-prompt="Pick a color" />
+		</div>
+		<div>
+			<span class="icon-plus"></span>
+			<button id="add-color" class="transition_all_1s">Add Color</button>
+		</div>
+		<div>
+			<span class="icon-link"></span>
+			<button id="get-permalink" class="transition_all_1s">Get Link</button>
+		</div>
+	</div>
+	<div id="background_img" class="transition_padding_5s transition_delay_3s">
+	</div>
+	<script type="text/javascript" src="js/jquery.translucent.js"></script>
+</body>
+</html>

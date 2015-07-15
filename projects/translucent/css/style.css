@@ -1,0 +1,235 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary,
+time, mark, audio, video { margin: 0; padding: 0; border: 0; font-size: 100%; vertical-align: baseline; }
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; }
+body { line-height: 1; }
+ol, ul { list-style: none; }
+blockquote, q { quotes: none; }
+blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; }
+table { border-collapse: collapse; border-spacing: 0; }
+div {box-sizing:border-box;-moz-box-sizing:border-box;}
+* {font-family: 'Muli', sans-serif;}
+*:focus {outline:none;}
+
+/* END css reset */
+
+/* GLOBAL STYLES */
+	html {
+		height:100%;
+	}
+	body {
+		position:relative;
+		height:100%;
+	}
+	#controls {
+		position:absolute;
+		width:30px;
+		height:100%;
+		left:0;
+		top:0;
+		overflow:hidden;
+		z-index:2;
+
+		background:#222;
+		color:#c7e1ec;
+	}
+	#controls:hover, #controls.focus {
+		width:200px;
+	}
+	#background_img {
+		position:absolute;
+		height:100%;
+		width:100%;
+		padding-left:30px;
+		background-clip: content-box;
+		z-index: 1;
+	}
+	#controls:hover + #background_img, #controls.focus + #background_img {
+		padding-left:200px;
+	}
+/* LOCAL STYLES */
+	#controls > div {
+		position:relative;
+		display:block;
+		padding:5px 0;
+		white-space:nowrap;
+		font-size:0;
+		width:200px;
+	}
+	#controls > div > * {
+		font-size:18px;
+		font-size:1rem;
+	}
+	#controls [class^="icon-"] {
+		display: inline-block;
+		width: 30px;
+		line-height: 30px;
+
+		font-size: 16px;
+		text-align: center;
+	}
+	#controls input, #controls input[type="checkbox"] + label, #controls button {
+		display: inline-block;
+		line-height: 26px;
+		vertical-align: top;
+		width: 165px;
+		margin: 0;
+		padding: 2px 3px;
+		border: 0;
+	}
+	#controls input[type="text"] {
+		background-color:#c7e1ec;
+		color:#222;
+	}
+	#controls input[type="checkbox"] {
+		display:none;
+	}
+	#controls label span {
+		display:inline-block;
+		margin:0 5px;
+		padding: 0 5px;
+	}
+	#controls label span.off, #controls :checked + label span.on {
+		background:#c7e1ec;
+		color:#222;
+	}
+	#controls :checked + label span.off, #controls label span.on {
+		background:transparent;
+		color:inherit;
+	}
+	#controls input#time {
+		position:relative;
+	}
+	#controls input#time + small {
+		position:absolute;
+		right:10px;
+		top:5px;
+		line-height:30px;
+		vertical-align:middle;
+
+		color:#222;
+		font-size:12px;
+	}
+	#controls button {
+		background: #444;
+		color: #c7e1ec;
+		text-align: left;
+		padding: 2px 6px;
+		width: auto;
+		border-radius: 5px;
+		cursor:pointer;
+		box-shadow: inset 1px 1px 3px -5px #000, 2px 2px 2px #000;
+	}
+	.delete-color {
+		position: absolute;
+		top: 10px;
+		right: 10px;
+		vertical-align: middle;
+		line-height: 20px;
+		width: 20px;
+		text-align: center;
+		background: #6D2524;
+		border-radius: 3px;
+		cursor:pointer;
+	}
+	#controls button:active {
+		box-shadow: inset 1px 1px 3px 2px #000, 2px 2px 2px -5px #000;
+	}
+	.colorpicker {
+		z-index:3;
+	}
+	.colorpicker_hex input {
+		height:14px !important;
+	}
+	.color-inc {
+		counter-increment: colorCount;
+	}
+	.icon-color {
+		position:relative;
+	}
+	.icon-color:after {
+		position:absolute;
+		right:2px;
+		bottom:2px;
+		content: counter(colorCount);
+		font-size:8px;
+		line-height:100%;
+	}
+/* GLOBAL TOOLS */
+	.transition_all_5s {
+		-webkit-transition: all 0.5s ease-out;  /* Chrome 1-25, Safari 3.2+ */
+			 -moz-transition: all 0.5s ease-out;  /* Firefox 4-15 */
+				 -o-transition: all 0.5s ease-out;  /* Opera 10.50.12.00 */
+						transition: all 0.5s ease-out;  /* Chrome 26, Firefox 16+, IE 10+, Opera 12.10+ */
+	}
+	.transition_all_1s {
+		-webkit-transition: all 0.1s ease-out;  /* Chrome 1-25, Safari 3.2+ */
+			 -moz-transition: all 0.1s ease-out;  /* Firefox 4-15 */
+				 -o-transition: all 0.1s ease-out;  /* Opera 10.50.12.00 */
+						transition: all 0.1s ease-out;  /* Chrome 26, Firefox 16+, IE 10+, Opera 12.10+ */
+	}
+	.transition_padding_5s {
+		-webkit-transition: padding 0.5s ease-out;  /* Chrome 1-25, Safari 3.2+ */
+			 -moz-transition: padding 0.5s ease-out;  /* Firefox 4-15 */
+				 -o-transition: padding 0.5s ease-out;  /* Opera 10.50.12.00 */
+						transition: padding 0.5s ease-out;  /* Chrome 26, Firefox 16+, IE 10+, Opera 12.10+ */
+	}
+	.transition_delay_3s {
+		-webkit-transition-delay: 0.3s;  /* Chrome 1-25, Safari 3.2+ */
+			 -moz-transition-delay: 0.3s;  /* Firefox 4-15 */
+				 -o-transition-delay: 0.3s;  /* Opera 10.50.12.00 */
+						transition-delay: 0.3s;  /* Chrome 26, Firefox 16+, IE 10+, Opera 12.10+ */
+	}
+@font-face {
+	font-family: 'icomoon';
+	src:url('../fonts/icomoon.eot?w79gqz');
+	src:url('../fonts/icomoon.eot?#iefixw79gqz') format('embedded-opentype'),
+		url('../fonts/icomoon.ttf?w79gqz') format('truetype'),
+		url('../fonts/icomoon.woff?w79gqz') format('woff'),
+		url('../fonts/icomoon.svg?w79gqz#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class*="icon-"] {
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-image:before {
+	content: "\e600";
+}
+.icon-loop:before {
+	content: "\e601";
+}
+.icon-link:before {
+	content: "\e602";
+}
+.icon-stopwatch:before {
+	content: "\e603";
+}
+.icon-color:before {
+	content: "\e604";
+}
+.icon-plus:before {
+	content: "\e605";
+}
+

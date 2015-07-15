@@ -1,0 +1,112 @@
+<!doctype>
+<html>
+	<head>
+		<link type="text/css" rel="stylesheet" href="style.css" />
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" ></script>
+		<script src="script.js" type="text/javascript"></script>
+		<title>Canvas Expirements</title>
+	</head>
+	<body>
+		<div class="wrap">
+			<div class="container">
+				<h2>Lines</h2>
+				<canvas id="canvas1" width="800" height="400"></canvas>
+				<script type="text/javascript">
+					var canvas = $('#canvas1').get(0);
+					var context = canvas.getContext('2d');
+
+					context.beginPath();
+					context.moveTo(100, 150);
+					context.lineTo(450, 50);
+					context.lineWidth = 10;
+					context.strokeStyle = colors.dark;
+					context.stroke();
+
+					// butt line cap (top line)
+					context.beginPath();
+					context.moveTo(200, canvas.height / 2 - 50);
+					context.lineTo(canvas.width - 200, canvas.height / 2 - 50);
+					context.lineWidth = 20;
+					context.strokeStyle = colors.dark;
+					context.lineCap = 'butt';
+					context.stroke();
+
+					// round line cap (middle line)
+					context.beginPath();
+					context.moveTo(200, canvas.height / 2);
+					context.lineTo(canvas.width - 200, canvas.height / 2);
+					context.lineWidth = 20;
+					context.strokeStyle = colors.dark;
+					context.lineCap = 'round';
+					context.stroke();
+
+					// square line cap (bottom line)
+					context.beginPath();
+					context.moveTo(200, canvas.height / 2 + 50);
+					context.lineTo(canvas.width - 200, canvas.height / 2 + 50);
+					context.lineWidth = 20;
+					context.strokeStyle = colors.dark;
+					context.lineCap = 'square';
+					context.stroke();
+				</script>
+			</div>
+			<div class="container">
+				<h2>Arcs and curves</h2>
+				<canvas id="canvas2" width="800" height="400"></canvas>
+				<script type="text/javascript">
+					var canvas = $('#canvas2').get(0);
+					var context = canvas.getContext('2d');
+					var x = canvas.width / 2;
+					var y = canvas.height / 2;
+					var radius = 100;
+					var startAngle = 1.1 * Math.PI;
+					var endAngle = 1.9 * Math.PI;
+					var counterClockwise = false;
+
+					context.beginPath();
+					context.arc(x, y, radius, startAngle, endAngle, counterClockwise);
+					context.lineWidth = 15;
+					context.lineCap = 'round';
+					// line color
+					context.strokeStyle = colors.dark;
+					context.stroke();
+
+					context.beginPath();
+					context.moveTo(canvas.width/2,canvas.height/2);
+					context.quadraticCurveTo(canvas.width/2+100, canvas.height/2+100, canvas.width/1.5, canvas.height/2);
+					context.stroke();
+
+					context.beginPath();
+					context.moveTo(canvas.width/3,canvas.height/3);
+					context.quadraticCurveTo(canvas.width/3-100, canvas.height-100, canvas.width/3, canvas.height-100);
+					context.stroke();
+				</script>
+			</div>
+			<div class="container">
+				<h2>Bezier Curves</h2>
+				<canvas id="canvas3" width="800" height="400"></canvas>
+				<script type="text/javascript">
+					var canvas = $('#canvas3').get(0);
+					var context = canvas.getContext('2d');
+
+					context.beginPath();
+					context.moveTo(188, 130);
+					context.bezierCurveTo(140, 10, 388, 10, 388, 170);
+					context.lineWidth = 10;
+
+					// line color
+					context.strokeStyle = 'black';
+					context.stroke();
+				</script>
+			</div>
+			<div class="container">
+				<h2>Arcs</h2>
+				<canvas id="canvas4" width="800" height="400"></canvas>
+				<script type="text/javascript">
+					var canvas = $('#canvas4').get(0);
+					var context = canvas.getContext('2d');
+				</script>
+			</div>
+		</div>
+	</body>
+</html>

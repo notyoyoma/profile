@@ -1,0 +1,205 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+html {
+	font-size:20px
+}
+body {
+	line-height: 1;
+	background-color:#c4d0ee;
+	color:#2c4a9a;
+	font-family: 'Raleway', sans-serif;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+div {
+	box-sizing:border-box;
+	-moz-box-sizing:border-box;
+}
+h1,h2,h3,h4,h5,h6 {
+	line-height:120%;
+	margin:30px 0;
+	font-family: 'Belgrano', serif;
+}
+h1 {
+	font-size:80px;
+	font-size:4rem;
+}
+h2 {
+	font-size:60px;
+	font-size:3rem;
+}
+h3 {
+	font-size:40px;
+	font-size:2rem;
+}
+h4 {
+	font-size:30px;
+	font-size:1.5rem;
+}
+h5 {
+	font-size:25px;
+	font-size:1.25rem;
+}
+h6 {
+	font-size:20px;
+	font-size:1rem;
+}
+a {
+	color:inherit;
+	text-decoration:none;
+	-webkit-transition: color 0.5s linear;  /* Chrome 1-25, Safari 3.2+ */
+     -moz-transition: color 0.5s linear;  /* Firefox 4-15 */
+       -o-transition: color 0.5s linear;  /* Opera 10.50.12.00 */
+          transition: color 0.5s linear;  /* Chrome 26, Firefox 16+, IE 10+, Opera 12.10+ */
+}
+a:hover {
+	color:#02114A;
+}
+
+
+.headshot {
+	border-radius:50%;
+	border:10px solid #c4d0ee;
+	display:block;
+	margin:30px auto;
+}
+
+
+.row {
+	display:block;
+}
+.wrapper {
+	margin:0 auto;
+	padding:0 30px;
+	max-width:1200px;
+}
+.e-card {
+	text-align:center;
+	background-color:#02113a;
+	padding:30px 0;
+}
+.side-scroll {
+	white-space:nowrap;
+	overflow-x:auto;
+}
+.side-scroll > * {
+	white-space:normal;
+}
+.buckets {
+	margin:30px 0;
+}
+.buckets > div {
+	padding: 30px;
+	background-color:#02113a;
+	display: inline-block;
+	width: 300px;
+	margin: 30px 0 30px 30px;
+	vertical-align:top;
+}
+.buckets > div:first-child {
+	margin-left:0;
+}
+.buckets h5:first-child {
+	margin-top:0;
+}
+li {
+	background-color:#c4d0ee;
+	padding:4px 6px;
+	margin-top:5px;
+	display:inline-block;
+}
+li:first-child {
+	margin-top:0;
+}
+.hoverable {
+	position:relative;
+}
+.hoverable > .tooltip {
+	display:none;
+	position:absolute;
+	left:100%;
+	top:100%;
+	margin: -50px 0 0 -50px;
+	padding: 40px 30px 30px 60px;
+	z-index:1;
+}
+.hoverable:hover > .tooltip {
+	display:inline-block;
+}
+.hoverable:hover > .tooltip > span {
+	padding:4px 6px;
+	background-color:#c4d0ee;
+	box-shadow: 0 0 3px 2px #000;
+	white-space: nowrap;
+	display: inline-block;
+}
+
+@font-face {
+	font-family: 'icomoon';
+	src:url('/fonts/icomoon.eot');
+	src:url('/fonts/icomoon.eot?#iefix') format('embedded-opentype'),
+		url('/fonts/icomoon.ttf') format('truetype'),
+		url('/fonts/icomoon.woff') format('woff'),
+		url('/fonts/icomoon.svg#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class*="icon-"] {
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	font-size:16px;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-link:before {
+	content: "\e601";
+}
+.icon-info:before {
+	content: "\e600";
+}
+
