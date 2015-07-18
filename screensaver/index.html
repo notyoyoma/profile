@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Live Screensaver</title>
+    <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/react.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/JSXTransformer.js'></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="style.css" type="text/css" media="all" />
+  </head>
+  <body>
+    <div id="mount-point"></div>
+    <script type="text/javascript" charset="utf-8">
+      var ssRef = new Firebase('https://screensaversync.firebaseio.com/');
+    </script>
+    <script type="text/jsx">
+      /** @jsx React.DOM */
+      var Header = React.createClass({
+        getInitialState: function() {
+          return {bgcolor: "#fff", color: "#000"};
+        },
+        handleChange: function(e) {
+          var cssObj = {};
+          cssObj[e.target.name] = e.target.value;
+          this.setState(cssObj);
+        },
+        render: function(){
+          return (
+            <div>
+              <h1 style={{backgroundColor: this.state.bgcolor, color: this.state.color}}>martynaselli.com/screensaver</h1>
+              <div id="edit">
+                <input type="text" name="color" value={this.state.color} onChange={this.handleChange} />
+                <input type="text" name="bgcolor" value={this.state.bgcolor} onChange={this.handleChange} />
+              </div>
+            </div>
+          );
+        },
+      });
+      React.render(
+        <Header/>,
+        document.getElementById('mount-point')
+      );
+    </script>
+    <script type="text/javascript">
+      $('input').keyup(function() {
+        var obj = {}
+        obj[$(this).attr('name')] = $(this).attr('value');
+        Header.updateValue(obj);
+      });
+    </script>
+  </body>
+</html>
