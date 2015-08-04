@@ -18,11 +18,9 @@ table td {
 }
 
 .block {
-  font-size:300px;
   width:1em;
   height:1em;
   position:relative;
-  background:#999;
   display:inline-block;
   image-rendering: pixelated;
 }
@@ -64,25 +62,27 @@ table td {
   transform: rotateY(90deg);
 }
 
-@-webkit-keyframes spin {
-  0%   {transform: rotateX(-20deg) translateZ(0.5em) rotateY(0deg);}
-  100% {transform: rotateX(-20deg) translateZ(0.5em) rotateY(360deg);}
-}
-@keyframes spin {
-  0%   {transform: rotateX(-20deg) translateZ(0.5em) rotateY(0deg);}
-  100% {transform: rotateX(-20deg) translateZ(0.5em) rotateY(360deg);}
-}
-.block {
-  -webkit-animation: spin 5s infinite linear;
-  animation: spin 5s infinite linear;
-}
-
 .block--dirt div,
 .block--dirt-grass div {
   background: url('mc_dirt.jpg');
   background-size:100%;
 }
 
-.block--dirt-grass .top { background-position:-2em; }
-.block--dirt-grass .side { background-position:-1em; }
+.block--dirt-grass .top { background-position:0 -2em; }
+.block--dirt-grass .side { background-position:0 -1em; }
 
+.field {
+  margin:10vh 10vw;
+  height:80vh;
+  width:80vw;
+  position:relative;
+  font-size:300px;
+  perspective: 200vw;
+}
+.field .block {
+  position:absolute;
+}
+.field .block.top { top:0; }
+.field .block.bottom { bottom:0; }
+.field .block.left { left:0; }
+.field .block.right { right:0; }
