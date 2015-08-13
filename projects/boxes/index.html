@@ -7,39 +7,21 @@
     <link rel="stylesheet" href="style.css" type="text/css" media="all" />
   </head>
   <body>
-    <div class="field">
-      <div class="block block--dirt-grass top left">
-        <div class="top"></div>
-        <div class="side side--1"></div>
-        <div class="side side--2"></div>
-        <div class="side side--3"></div>
-        <div class="side side--4"></div>
-        <div class="bottom"></div>
-      </div>
-      <div class="block block--dirt-grass top right">
-        <div class="top"></div>
-        <div class="side side--1"></div>
-        <div class="side side--2"></div>
-        <div class="side side--3"></div>
-        <div class="side side--4"></div>
-        <div class="bottom"></div>
-      </div>
-      <div class="block block--dirt-grass bottom left">
-        <div class="top"></div>
-        <div class="side side--1"></div>
-        <div class="side side--2"></div>
-        <div class="side side--3"></div>
-        <div class="side side--4"></div>
-        <div class="bottom"></div>
-      </div>
-      <div class="block block--dirt-grass bottom right">
-        <div class="top"></div>
-        <div class="side side--1"></div>
-        <div class="side side--2"></div>
-        <div class="side side--3"></div>
-        <div class="side side--4"></div>
-        <div class="bottom"></div>
-      </div>
+    <div id="field" class="field">
     </div>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.3/handlebars.min.js"></script>
+    <script id="block-template" type="text/text/x-handlebars-template">
+      <div class="block block--{{id}}" style="left:{{l}};top:{{t}}">
+        <div class="top"></div>
+        <div class="side side--1"></div>
+        <div class="side side--2"></div>
+        <div class="side side--3"></div>
+        <div class="side side--4"></div>
+        <div class="bottom"></div>
+      </div>
+    </script>
+    <script type="text/javascript" src="minecraft_field.js"></script>
+    <script type="text/javascript" src="script.js"></script>
   </body>
 </html>
