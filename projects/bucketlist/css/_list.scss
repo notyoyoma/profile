@@ -1,0 +1,9 @@
+.item-list {
+  li {
+    list-style:none;
+    margin-bottom:$base-spacing-unit;
+    * {
+      vertical-align:middle;
+    }
+  }
+}

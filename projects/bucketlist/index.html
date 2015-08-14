@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width">
     <title>Marty's Bucketlist</title>
     <link rel="stylesheet" href="style.css" type="text/css" media="all" />
+    <link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
     <!-- AngularJS -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
     <!-- Firebase -->
@@ -23,15 +24,15 @@
           <option>eat</option>
           <option>travel</option>
         </select>
-        <input type="range" ng-model="form.importance" />
+        <input type="range" max=10 min=1 ng-model="form.importance" />
         <input type="submit" value="Add" />
       </form>
-      <ul>
+      <ul class="item-list">
         <li class="item" ng-repeat="item in items">
-          <span class="item__type-indicator icon-{{item.type}}"></span>
+          <span class="item__type-indicator icon-{{item.type}} token token--large"></span>
           <span>{{item.name}}</span>
           <span>{{item.importance}}</span>
-          <button ng-click="items.$remove(item)">&times;</button>
+          <button ng-click="items.$remove(item)" class="token">&times;</button>
         </li>
       </ul>
     </div>

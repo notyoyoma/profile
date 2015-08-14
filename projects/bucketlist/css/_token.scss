@@ -1,0 +1,19 @@
+.token {
+  display:inline-block;
+  text-align:center;
+  width:3em;
+  height:3em;
+  line-height:3em;
+  background:#eee;
+  border-radius:50%;
+  border:2px solid #efefef;
+  padding:0;
+}
+.token:before {
+  font-size:1.5em;
+  line-height:2em;
+}
+.token--large {
+  font-size:1.5em;
+}
+
